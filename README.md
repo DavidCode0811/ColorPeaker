@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Color Blind Assist App
 
 ## Overview
@@ -52,3 +53,6 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
+=======
+# ColorPeaker
+>>>>>>> 57d1757cbf19f0bf155590067c8be480cbec075d
