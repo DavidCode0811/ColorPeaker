@@ -1,0 +1,25 @@
+{
+  "name": "color-blind-assist-app",
+  "version": "1.0.0",
+  "description": "An application to assist color-blind individuals by providing voice feedback on colors detected from scanned surfaces.",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "typescript": "^4.5.4",
+    "ts-node": "^10.4.0",
+    "jest": "^27.0.6",
+    "@types/jest": "^27.0.2",
+    "express": "^4.17.1",
+    "multer": "^1.4.3",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
