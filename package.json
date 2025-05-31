@@ -1,25 +1,39 @@
 {
-  "name": "color-blind-assist-app",
-  "version": "1.0.0",
-  "description": "An application to assist color-blind individuals by providing voice feedback on colors detected from scanned surfaces.",
-  "main": "src/app.ts",
+  "name": "vite-react-typescript-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "ts-node src/app.ts",
-    "build": "tsc",
-    "test": "jest"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "server": "node src/app.ts"
   },
   "dependencies": {
-    "typescript": "^4.5.4",
-    "ts-node": "^10.4.0",
-    "jest": "^27.0.6",
-    "@types/jest": "^27.0.2",
-    "express": "^4.17.1",
-    "multer": "^1.4.3",
-    "node-fetch": "^2.6.1"
+    "express": "^4.18.3",
+    "jimp": "^0.22.12",
+    "lucide-react": "^0.344.0",
+    "multer": "^2.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7"
-  },
-  "author": "Your Name",
-  "license": "MIT"
+    "@eslint/js": "^9.9.1",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.11",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^9.9.1",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.11",
+    "globals": "^15.9.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.3.0",
+    "vite": "^6.3.5"
+  }
 }

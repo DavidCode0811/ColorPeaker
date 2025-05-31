@@ -1,15 +1,15 @@
-export interface Color {
-    name: string;
-    hex: string;
-    rgb: {
-        r: number;
-        g: number;
-        b: number;
-    };
+/**
+ * Color information with hex and RGB representation
+ */
+export interface ColorInfo {
+  hex: string;
+  rgb: string;
 }
 
-export interface ScanResult {
-    color: Color;
-    timestamp: Date;
-    imageUrl: string;
+/**
+ * Result of color detection process
+ */
+export interface ColorResult {
+  dominant: ColorInfo;
+  palette: ColorInfo[];
 }

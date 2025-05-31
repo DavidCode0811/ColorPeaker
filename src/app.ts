@@ -1,30 +1,22 @@
-import { CameraScanner } from './components/CameraScanner';
-import { ColorAnalyzer } from './components/ColorAnalyzer';
-import { VoiceFeedback } from './components/VoiceFeedback';
+import express, { Request, Response } from 'express';
+import multer from 'multer';
+import { analyzeColor } from './components/ColorAnalyzer';
 
-class ColorBlindAssistApp {
-    private cameraScanner: CameraScanner;
-    private colorAnalyzer: ColorAnalyzer;
-    private voiceFeedback: VoiceFeedback;
+const app = express();
+const upload = multer(); // Use memory storage
 
-    constructor() {
-        this.cameraScanner = new CameraScanner();
-        this.colorAnalyzer = new ColorAnalyzer();
-        this.voiceFeedback = new VoiceFeedback();
-    }
+app.post('/api/color-detect', upload.single('image'), async (req: Request, res: Response): Promise<void> => {
 
-    public start() {
-        this.cameraScanner.startScanning();
-        this.cameraScanner.onScan((image) => {
-            const color = this.colorAnalyzer.analyzeColor(image);
-            this.voiceFeedback.speakColor(color);
-        });
-    }
+  const imageBuffer = req.file?.buffer;
+  if (!imageBuffer) {
+    res.status(400).json({ error: 'No image uploaded' });
+    return;
+  }
 
-    public stop() {
-        this.cameraScanner.stopScanning();
-    }
-}
-
-const app = new ColorBlindAssistApp();
-app.start();
+    const detectedColor = await analyzeColor(imageBuffer);
+    res.json({ color: detectedColor });
+});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ API server running on port ${PORT}`);
+});
