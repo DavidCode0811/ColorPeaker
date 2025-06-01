@@ -3,11 +3,13 @@
 @import 'tailwindcss/components.css';
 @import 'tailwindcss/utilities.css';
 
-@layer base {
-  body {
-    @apply text-gray-800 antialiased;
-  }
+body {
+  color: #1f2937; /* Equivalent to text-gray-800 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+@layer base {
   @keyframes fadeIn {
     from {
       opacity: 0;
